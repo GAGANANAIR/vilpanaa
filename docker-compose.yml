@@ -26,6 +26,8 @@ services:
     volumes:
       - ./odoo.conf:/etc/odoo/odoo.conf:ro
       - ./addons:/mnt/extra-addons
+      - ./logs:/var/log/odoo
+      - ./filestore:/var/lib/odoo/.local/share/Odoo/filestore
       # If you have Enterprise code, uncomment:
       # - ./enterprise:/mnt/enterprise
     environment:

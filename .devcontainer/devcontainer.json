@@ -5,13 +5,34 @@
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "overrideCommand": false,
 
+  // Start only these compose services
+  "runServices": ["db", "odoo"],
+
+  // Root user for consistent file permissions
   "remoteUser": "root",
 
+  // Disable random port forwarding
+  "remoteEnv": {
+    "PORT_AUTO_FORWARDING": "off",
+    "TZ": "Asia/Kolkata"
+  },
+
+  // Explicitly forward only Odoo’s web port
+  "forwardPorts": [8069],
+  "portsAttributes": {
+    "8069": {
+      "label": "Odoo 19",
+      "onAutoForward": "openBrowser"
+    }
+  },
+
+  // Devcontainer features
   "features": {
     "ghcr.io/devcontainers/features/github-cli:1": {},
     "ghcr.io/devcontainers/features/node:1": {}
   },
 
+  // Recommended VS Code setup
   "customizations": {
     "vscode": {
       "extensions": [
@@ -31,11 +52,16 @@
     }
   },
 
+  // Post-create steps
   "postCreateCommand": "mkdir -p addons && chown -R root:root /workspaces && odoo --version",
-  "forwardPorts": [8069],
-  "portsAttributes": {
-    "8069": { "label": "Odoo 19", "onAutoForward": "openBrowser" }
-  },
+
+  // Stop services cleanly when Codespace stops
   "shutdownAction": "stopCompose",
-  "hostRequirements": { "cpus": 4, "memory": "8gb", "storage": "16gb" }
+
+  // Host requirements (Codespaces resources)
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "8gb",
+    "storage": "16gb"
+  }
 }
