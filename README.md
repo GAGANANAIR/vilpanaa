@@ -37,7 +37,7 @@ Odoo will be available at [http://localhost:8069](http://localhost:8069).
 
 Drop your custom Odoo addons into the `addons/` folder — it's mounted to `/mnt/extra-addons` inside the container and picked up automatically via `odoo.conf`.
 
-## ⚠️ Security note
+## Security note
 
 The default `docker-compose.yml` uses simple credentials (`odoo` / `odoo`) for local development convenience. **Do not use these defaults in production** — swap in strong, unique credentials and environment-based secrets before deploying anywhere beyond your local machine.
 
