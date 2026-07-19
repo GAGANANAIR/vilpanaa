@@ -9,8 +9,6 @@
   <img src="https://img.shields.io/badge/vscode-devcontainer-007acc?logo=visualstudiocode&logoColor=white" alt="VS Code Devcontainer"/>
 </p>
 
-# vilpanaa
-
 A ready-to-run **Odoo development environment** using Docker Compose and Postgres, with VS Code Devcontainer support for a one-click setup.
 
 ## What's inside
