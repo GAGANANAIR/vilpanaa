@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="banner.svg" alt="vilpanaa — Odoo Development Environment" width="100%"/>
+  <img src="banner.svg" alt="Odoo Development Environment" width="100%"/>
 </p>
 
 <p align="center">
